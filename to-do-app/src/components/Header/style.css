@@ -3,12 +3,12 @@
     align-items: center;
     justify-content: space-between;
 
-    padding: 30px 30px 30px 30px;
+    padding: 10px 30px 10px 30px;
 
     background-color: white;
 }
 .headerContainer img{
-    width: 50px;
+    width: 40px;
 }
 .headerContainer h1 {
     color: rgb(0, 0, 0);
