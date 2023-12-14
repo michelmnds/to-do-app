@@ -1,26 +1,69 @@
+/* eslint-disable react/jsx-key */
+/* eslint-disable react/prop-types */
 import "./style.css";
-import data from "../../assets/data.json";
+import { Link } from "react-router-dom";
 
-export const ToDoList = () => {
+export const ToDoList = ({ list, setList }) => {
   return (
     <div className="taskContainer">
       <h1>TO-DO List</h1>
       <ul className="taskUl">
-        {data.map((task) =>
-          task.completed ? (
-            <li className="task" key={task.task}>
-              {task.task}
-              <button className="doneBtn">Done</button>
-              <button className="deleteBtn">Delete</button>
+        {list.map((task) =>
+          !task.completed ? (
+            <li className="task" key={task.id}>
+              <Link to={`/tasks/${task.id}`}>
+                <span className="taskTitle">{task.task}</span>
+              </Link>
+              <button
+                className="doneBtn"
+                onClick={() => {
+                  task.completed = true;
+
+                  setList([...list]);
+                }}
+              >
+                Done
+              </button>
+              <button
+                className="deleteBtn"
+                onClick={() => {
+                  const newArr = [];
+                  list.map((item) => {
+                    if (item.id !== task.id) {
+                      newArr.push(item);
+                    }
+                    setList(newArr);
+                  });
+                }}
+              >
+                Delete
+              </button>
             </li>
           ) : (
-            <li
-              className="task"
-              style={{ color: "green", textDecoration: "line-through" }}
-              key={task.task}
-            >
-              {task.task}
-              <button className="deleteBtn">Delete</button>
+            <li className="task" key={task.id}>
+              <Link to={`/tasks/${task.id}`}>
+                {" "}
+                <span
+                  style={{ color: "green", textDecoration: "line-through" }}
+                  className="taskTitle"
+                >
+                  {task.task}
+                </span>
+              </Link>
+              <button
+                className="deleteBtn"
+                onClick={() => {
+                  const newArr = [];
+                  list.map((item) => {
+                    if (item.id !== task.id) {
+                      newArr.push(item);
+                    }
+                    setList(newArr);
+                  });
+                }}
+              >
+                Delete
+              </button>
             </li>
           )
         )}

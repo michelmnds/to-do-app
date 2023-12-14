@@ -1,0 +1,36 @@
+.formContainer{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 30px;
+
+    gap: 10px;
+}
+
+.titleInput{
+    width: 250px;
+    height: 30px;
+
+    border: none;
+    border-radius: 8px;
+    outline: none;
+
+    
+    padding: 0;
+    margin: 0;
+
+}
+.formBtn{
+    width: 250px;
+    height: 30px;
+
+    padding: 0;
+    margin: 0;
+
+    border: none;
+    border-radius: 8px;
+    outline: none;
+}
