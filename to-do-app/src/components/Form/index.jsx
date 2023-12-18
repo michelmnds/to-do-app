@@ -17,16 +17,18 @@ export const Form = ({ title, setTitle, list, setList }) => {
       <button
         className="formBtn"
         type="submit"
-        onClick={() =>
-          setList([
-            ...list,
-            {
-              id: list.length + 1,
-              task: title,
-              completed: false,
-            },
-          ])
-        }
+        onClick={() => {
+          if (title !== "") {
+            setList([
+              ...list,
+              {
+                id: list.length + 1,
+                task: title,
+                completed: false,
+              },
+            ]);
+          }
+        }}
       >
         Add
       </button>

@@ -4,18 +4,17 @@ import { Footer } from "../Footer";
 import { ToDoList } from "../ToDoList";
 import { Form } from "../Form";
 import { useState } from "react";
-import data from "../../assets/data.json";
 
-export const HomePage = () => {
+export const HomePage = ({ list, setList }) => {
   const [title, setTitle] = useState("");
-  const [list, setList] = useState(data);
+  const [sideBar, setSideBar] = useState(false);
 
   return (
     <>
-      <Header />
-      <Form list={list} setList={setList} title={title} setTitle={setTitle} />
+      <Header sideBar={sideBar} setSideBar={setSideBar} />
       <ToDoList list={list} setList={setList} />
-      <SideBar />
+      <Form list={list} setList={setList} title={title} setTitle={setTitle} />
+      <SideBar sideBar={sideBar} setSideBar={setSideBar} />
       <Footer />
     </>
   );
