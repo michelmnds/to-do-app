@@ -18,7 +18,7 @@ export const ToDoList = ({ list, setList }) => {
       <div className="taskContainer">
         <div className="info">
           <span>Task</span>
-          <span>Completed</span>
+          <span>Actions</span>
         </div>
         {list.length > 7 ? (
           <ul className="taskUl">
