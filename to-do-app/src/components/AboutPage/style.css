@@ -1,0 +1,28 @@
+.aboutContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  max-width: 775px;
+  margin: 0 auto;
+}
+
+.aboutContainer h1 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.aboutContainer h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: normal;
+  text-align: center;
+}
+
+.aboutContainer h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-align: center;
+}
