@@ -5,6 +5,7 @@ import { ToDoList } from "../ToDoList";
 import { Form } from "../Form";
 import { useState } from "react";
 
+// eslint-disable-next-line react/prop-types
 export const HomePage = ({ list, setList }) => {
   const [title, setTitle] = useState("");
   const [sideBar, setSideBar] = useState(false);

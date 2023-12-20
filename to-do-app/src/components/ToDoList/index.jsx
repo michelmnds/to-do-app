@@ -11,6 +11,8 @@ export const ToDoList = ({ list, setList }) => {
           <span>Task</span>
           <span>Completed</span>
         </div>
+
+        <h2>No tasks created</h2>
       </div>
     );
   } else {
